@@ -1,0 +1,6 @@
+@echo off
+cd /d "%~dp0"
+echo Running npm install...
+call npm install > install_log.txt 2>&1
+echo Running npm run dev...
+call npm run dev > dev_log.txt 2>&1
