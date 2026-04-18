@@ -53,8 +53,8 @@ export default function DashboardPage() {
       router.push("/auth/login");
       return;
     }
-    const parsedUser = JSON.parse(storedUser) as User;
-    if (!parsedUser.profile_completed) {
+    const parsedUser = JSON.parse(storedUser) as User | null;
+    if (!parsedUser || !parsedUser.profile_completed) {
       router.push("/onboarding");
       return;
     }
